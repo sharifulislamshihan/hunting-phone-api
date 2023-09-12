@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Hunting Phone API</title>
+</head>
+<body>
+    <header>
+        <h2 class="text-6xl text-center mb-32">Hunting Phone</h2>
+    </header>
+
+    <main class="container mx-auto">
+
+        <!-- search bar -->
+        <section>
+            <div class="bg-gray-100 p-4 m-4">
+                <input id="search-field" type="text" placeholder="Search..." class="input input-bordered w-full max-w-xs" />
+                <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+            </div>
+        </section>
+
+        <!-- Search result -->
+        <section>
+            <!-- Spinner for load API -->
+            <div id="loading-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-dots text-primary loading-lg"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            </div>
+
+            <!-- Show all button -->
+            <div id="show-all-container" class="hidden my-8 text-center">
+                <button onclick="handleShowAll()" class="btn btn-accent">Show All</button>
+            </div>
+        </section>
+
+        <!-- show details Modal -->
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="show-detail-phone-name" class="font-bold text-"></h3>
+                <p class="py-4">Press ESC key or click the button below to close</p>
+                <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+                </div>
+            </div>
+            </dialog> -->
+
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div id="show-detail-container" class="modal-box">
+                
+            </div>
+            </dialog>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
